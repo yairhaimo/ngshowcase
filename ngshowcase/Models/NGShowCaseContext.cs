@@ -16,5 +16,11 @@ namespace ngshowcase.Models
         public DbSet<Tag> Tags { get; set; }
         public DbSet<Comment> Comments { get; set; }
 
+
+        public NGShowCaseContext()
+        {
+            this.Configuration.LazyLoadingEnabled = false;
+            this.Configuration.ProxyCreationEnabled = false;
+        }
     }
 }

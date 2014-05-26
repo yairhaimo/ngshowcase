@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Data.Entity;
 
 namespace ngshowcase.Controllers
 {
@@ -16,7 +17,7 @@ namespace ngshowcase.Controllers
         {
             using (var context = new NGShowCaseContext())
             {
-                return context.Items.ToList();
+                return context.Items.Include(i => i.Comments).Include(i => i.Tags).Include(i => i.Type).ToList();
             }
         }
 
@@ -25,7 +26,7 @@ namespace ngshowcase.Controllers
         {
             using (var context = new NGShowCaseContext())
             {
-                return context.Items.SingleOrDefault(i => i.Id == id);
+                return context.Items.Include(i => i.Comments).Include(i => i.Tags).Include(i => i.Type).SingleOrDefault(i => i.Id == id);
             }
         }
 
@@ -39,16 +40,16 @@ namespace ngshowcase.Controllers
             }
         }
 
-        // POST api/<controller>
-        [Route("items/{itemId}/comment")]
-        public void Post(int itemId, [FromBody]Comment comment)
-        {
-            using (var context = new NGShowCaseContext())
-            {
-                //context.Items.Add(item);
-                context.SaveChanges();
-            }
-        }
+        //// POST api/<controller>
+        //[Route("items/{itemId}/comment")]
+        //public void Post(int itemId, [FromBody]Comment comment)
+        //{
+        //    using (var context = new NGShowCaseContext())
+        //    {
+        //        //context.Items.Add(item);
+        //        context.SaveChanges();
+        //    }
+        //}
 
         // PUT api/<controller>/5
         public void Put(int id, [FromBody]Item item)

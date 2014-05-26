@@ -1,10 +1,10 @@
 ﻿DETAILS
 
 {{item}}
-
+loading - {{loading}}
 <div class="row">
-    <div class="col-md-7">
-        <img src="http://placehold.it/700x500" alt="">
+    <div class="col-md-7 preview-window panel panel-default">
+        <iframe sandbox="allow-same-origin allow-scripts" ng-src="{{trustSrc('http://run.plnkr.co/plunks/' + item.PlnkrId)}}" frameborder="0" onload="finishedLoadingPlunker()"></iframe>
     </div>
     <div class="col-md-4 col-md-offset-1">
         <div class="row">
@@ -13,6 +13,14 @@
             </div>
             <div class="col-md-8">
                 {{item.Type}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                Plunker
+            </div>
+            <div class="col-md-8">
+                <a ng-href="http://plnkr.co/edit/{{item.PlnkrId}}?p=preview">I said plunker!</a>
             </div>
         </div>
     </div>

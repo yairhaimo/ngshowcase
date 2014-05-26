@@ -4,8 +4,9 @@
     var configuration = angular.module('ngShowcase.configuration', []);
 
     configuration.service('Configuration', function () {
-        this.baseurl = 'http://localhost:55246';
+        this.baseurl = '';
         this.apiurl = this.baseurl + '/api';
+        this.appurl = this.baseurl + '/app';
     });
 
 }());

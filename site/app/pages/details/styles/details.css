@@ -1,0 +1,9 @@
+﻿.preview-window {
+    height: 450px;
+    padding: 20px;
+}
+
+.preview-window iframe {
+    width: 100%;
+    height: 100%;
+}

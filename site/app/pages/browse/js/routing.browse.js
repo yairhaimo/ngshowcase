@@ -5,7 +5,7 @@
     page.config(['$stateProvider',
       function ($stateProvider) {
           $stateProvider
-              .state('browse', {
+              .state('master.browse', {
                   url: '/browse',
                   templateUrl: 'app/pages/browse/views/browse.html',
                   controller: 'BrowseController'

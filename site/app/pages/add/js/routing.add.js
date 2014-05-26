@@ -5,7 +5,7 @@
     page.config(['$stateProvider',
       function ($stateProvider) {
           $stateProvider
-              .state('add', {
+              .state('master.add', {
                   url: '/add',
                   templateUrl: 'app/pages/add/views/add.html',
                   controller: 'AddController'

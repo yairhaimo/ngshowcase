@@ -5,35 +5,42 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Data.Entity;
 
 namespace ngshowcase.Controllers
 {
     public class CommentsController : ApiController
     {
-        // GET api/<controller>
-        [Route("~api/items/{itemId}/comments")]
+        [Route("api/items/{itemId}/comments")]
         public IEnumerable<Comment> Get(int itemId)
         {
             using (var context = new NGShowCaseContext())
             {
-                return context.Items.SingleOrDefault(i => i.Id == itemId).Comments.ToList();
+                var comments = context.Items.Include(i => i.Comments).SingleOrDefault(i => i.Id == itemId).Comments;
+                return comments.ToList();
             }
-            
         }
 
-        
-        
-        [Route("~api/items/{itemId}/comments")]
-        public void Post([FromBody]Comment comment)
+        [Route("api/items/{itemId}/comments")]
+        public void Post(int itemId, [FromBody]Comment comment)
         {
             using (var context = new NGShowCaseContext())
             {
-                context.Items.SingleOrDefault(i => i.Id == itemId).Comments.Add(comment);
+                var comments = context.Items.Include(i=>i.Comments).SingleOrDefault(i => i.Id == itemId).Comments;
+                comments.Add(comment);
+                context.SaveChanges();
+            }
         }
 
-        // DELETE api/<controller>/5
-        public void Delete(int id)
+        [Route("api/items/{itemId}/comments/{commentId}")]
+        public void Delete(int itemId, int commentId)
         {
+            using (var context = new NGShowCaseContext())
+            {
+                var commentToDelete = context.Items.Include(i => i.Comments).SingleOrDefault(i => i.Id == itemId).Comments.SingleOrDefault(c => c.Id == commentId);
+                context.Comments.Remove(commentToDelete);
+                context.SaveChanges();                
+            }
         }
     }
 }
