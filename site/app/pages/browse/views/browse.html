@@ -1,0 +1,13 @@
+﻿<div class="row">
+    <div class="col-md-3" ng-repeat="item in items">
+        <a ui-sref="details({id:item.Id})">
+            <div class="thumbnail">
+                <img src="http://placehold.it/500x300" alt="">
+                <div class="caption">
+                    <h4>{{item.Name}}</h4>
+
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
