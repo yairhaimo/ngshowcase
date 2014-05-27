@@ -1,7 +1,10 @@
 ﻿browse
 <div class="row">
-    <div class="col-md-3" ng-repeat="itemType in data.itemTypes">
-        <button type="button" class="btn btn-default" ng-click="filter(itemType)">{{itemType.Name}}</button>
+    <div class="col-md-2">
+        <a class="btn btn-default" ui-sref="master.browse">Newest</a>
+    </div>
+    <div class="col-md-2" ng-repeat="itemType in data.itemTypes">
+        <a class="btn btn-default" ui-sref="master.browseType({itemType:itemType.Name})">{{itemType.Name}}</a>
     </div>
 </div>
 <div class="row">

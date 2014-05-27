@@ -1,9 +1,9 @@
 ﻿(function () {
     'use strict';
 
-    var auth = angular.module('ngShowcase.auth', []);
+    var auth = angular.module('ngShowcase.auth', ['ngShowcase.data']);
 
-    auth.factory('Auth', function ($rootScope) {
+    auth.factory('Auth', function ($rootScope, User) {
         var ngshowcaseRef = new Firebase('https://ngshowcase.firebaseio.com/');
         var _user = {};
         var _auth = new FirebaseSimpleLogin(ngshowcaseRef, function (error, user) {
@@ -12,7 +12,13 @@
                     /// TODO: handle errors
                     console.log(error);
                 } else if (user) {
-                    angular.copy(user, _user);
+                    var newUser = new User();
+                    newUser.Id = user.id;
+                    newUser.Name = user.displayName;
+                    newUser.AvatarUrl = user.thirdPartyUserData.avatar_url;
+                    newUser.HomePageUrl = user.thirdPartyUserData.html_url;
+                    newUser.$save();
+                    angular.copy(newUser, _user);
                 } else {
                     // user is logged out
                     angular.copy({}, _user);
@@ -30,7 +36,7 @@
             },
             user: _user,
             isAuthenticated: function () {
-                return !!_user.displayName;
+                return !!_user.Name;
             }
         };
     });

@@ -13,19 +13,28 @@ namespace ngshowcase.Controllers
     {
 
         // GET api/<controller>
-        public IEnumerable<Item> Get()
-        {
-            using (var context = new NGShowCaseContext())
-            {
-                return context.Items.Include(i => i.Comments.Select(c => c.User)).Include(i => i.Tags).Include(i => i.Type).ToList();
-            }
-        }
+        //public IEnumerable<Item> Get()
+        //{
+        //    using (var context = new NGShowCaseContext())
+        //    {
+        //        return context.Items.Include(i => i.Comments.Select(c => c.User)).Include(i => i.User).Include(i => i.Tags).Include(i => i.Type).ToList();
+        //    }
+        //}
 
-        public IEnumerable<Item> Get([FromUri]string itemType)// itemType Name not Id
+        public IEnumerable<Item> Get([FromUri]SearchQuery query)// itemType Name not Id
         {
             using (var context = new NGShowCaseContext())
             {
-                return context.Items.Include(i => i.Comments.Select(c => c.User)).Include(i => i.Tags).Include(i => i.Type).Where(i => i.Type.Name == itemType).ToList();
+                var items = context.Items.Include(i => i.User).Include(i => i.Tags).Include(i => i.Type).Include(i => i.Comments);
+                if (query.ItemType != null)
+                {
+                    items = items.Where(i => i.Type.Name == query.ItemType);
+                }
+                if (query.Name != null)
+                {
+                    items = items.Where(i => i.Name.Contains(query.Name));
+                }
+                return items.ToList();
             }
         }
 
@@ -34,7 +43,7 @@ namespace ngshowcase.Controllers
         {
             using (var context = new NGShowCaseContext())
             {
-                return context.Items.Include(i => i.Comments.Select(c => c.User)).Include(i => i.Tags).Include(i => i.Type).SingleOrDefault(i => i.Id == id);
+                return context.Items.Include(i => i.Comments.Select(c => c.User)).Include(i => i.User).Include(i => i.Tags).Include(i => i.Type).SingleOrDefault(i => i.Id == id);
             }
         }
 
@@ -72,14 +81,14 @@ namespace ngshowcase.Controllers
         }
 
         // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
-            using (var context = new NGShowCaseContext())
-            {
-                var itemToDelete = context.Items.SingleOrDefault(i => i.Id == id);
-                context.Items.Remove(itemToDelete);
-                context.SaveChanges();
-            }
-        }
+        //public void Delete(int id)
+        //{
+        //    using (var context = new NGShowCaseContext())
+        //    {
+        //        var itemToDelete = context.Items.SingleOrDefault(i => i.Id == id);
+        //        context.Items.Remove(itemToDelete);
+        //        context.SaveChanges();
+        //    }
+        //}
     }
 }

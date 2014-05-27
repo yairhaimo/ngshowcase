@@ -168,6 +168,7 @@
     <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\ItemsController.cs" />
     <Compile Include="Controllers\ItemTypesController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -187,11 +188,28 @@
     <Compile Include="Migrations\201405271527541_CommentDate.Designer.cs">
       <DependentUpon>201405271527541_CommentDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201405271736410_UserDetails.cs" />
+    <Compile Include="Migrations\201405271736410_UserDetails.Designer.cs">
+      <DependentUpon>201405271736410_UserDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405271931299_ItemUser.cs" />
+    <Compile Include="Migrations\201405271931299_ItemUser.Designer.cs">
+      <DependentUpon>201405271931299_ItemUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405272056368_userItems.cs" />
+    <Compile Include="Migrations\201405272056368_userItems.Designer.cs">
+      <DependentUpon>201405272056368_userItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405272250372_CommentItem.cs" />
+    <Compile Include="Migrations\201405272250372_CommentItem.Designer.cs">
+      <DependentUpon>201405272250372_CommentItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ItemType.cs" />
     <Compile Include="Models\NGShowCaseContext.cs" />
+    <Compile Include="Models\SearchQuery.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -227,6 +245,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405271527541_CommentDate.resx">
       <DependentUpon>201405271527541_CommentDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405271736410_UserDetails.resx">
+      <DependentUpon>201405271736410_UserDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405271931299_ItemUser.resx">
+      <DependentUpon>201405271931299_ItemUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405272056368_userItems.resx">
+      <DependentUpon>201405272056368_userItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405272250372_CommentItem.resx">
+      <DependentUpon>201405272250372_CommentItem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

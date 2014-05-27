@@ -16,8 +16,7 @@ namespace ngshowcase.Controllers
         {
             using (var context = new NGShowCaseContext())
             {
-                var comments = context.Items.Include(i=>i.Comments).Include(i => i.Comments.Select(c=>c.User)).SingleOrDefault(i => i.Id == itemId).Comments;
-                return comments.ToList();
+                return context.Comments.Where(c => c.Item.Id == itemId).OrderByDescending(c => c.Date).ToList();
             }
         }
 
@@ -26,26 +25,22 @@ namespace ngshowcase.Controllers
         {
             using (var context = new NGShowCaseContext())
             {
-                var comments = context.Items.Include(i=>i.Comments).Include(i=>i.Comments.Select(c=>c.User)).SingleOrDefault(i => i.Id == itemId).Comments;
-                var user = context.Users.SingleOrDefault(u=>u.Id == comment.User.Id);
-                if (user != null)
-                {
-                    comment.User = user;
-                }
-                comments.Add(comment);
+                comment.User = context.Users.SingleOrDefault(u => u.Id == comment.User.Id);
+                comment.Item = context.Items.Single(i => i.Id == itemId);
+                context.Comments.Add(comment);
                 context.SaveChanges();
             }
         }
 
-        [Route("api/items/{itemId}/comments/{commentId}")]
-        public void Delete(int itemId, int commentId)
-        {
-            using (var context = new NGShowCaseContext())
-            {
-                var commentToDelete = context.Items.Include(i => i.Comments).SingleOrDefault(i => i.Id == itemId).Comments.SingleOrDefault(c => c.Id == commentId);
-                context.Comments.Remove(commentToDelete);
-                context.SaveChanges();                
-            }
-        }
+        //[Route("api/items/{itemId}/comments/{commentId}")]
+        //public void Delete(int itemId, int commentId)
+        //{
+        //    using (var context = new NGShowCaseContext())
+        //    {
+        //        var commentToDelete = context.Items.Include(i => i.Comments).SingleOrDefault(i => i.Id == itemId).Comments.SingleOrDefault(c => c.Id == commentId);
+        //        context.Comments.Remove(commentToDelete);
+        //        context.SaveChanges();                
+        //    }
+        //}
     }
 }

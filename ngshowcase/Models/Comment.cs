@@ -10,6 +10,7 @@ namespace ngshowcase.Models
         public int Id { get; set; }
         public string Text { get; set; }
         public DateTime Date { get; set; }
+        public virtual Item Item { get; set; }
         public virtual User User { get; set; }
     }
 }

@@ -9,5 +9,8 @@ namespace ngshowcase.Models
     {
         public string Id { get; set; }
         public string Name { get; set; }
+        public string AvatarUrl { get; set; }
+        public string HomePageUrl { get; set; }
+        public virtual List<Item> Items { get; set; }
     }
 }

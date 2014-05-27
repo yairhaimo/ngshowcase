@@ -1,4 +1,18 @@
-﻿.item--control {
+﻿/* UI Bootstrap */
+.nav, .pagination, .carousel, .panel-title a {
+    cursor: pointer;
+}
+/****************/
+body {
+    padding-top: 70px; /* navbar */
+}
+
+
+
+
+
+
+.item--control {
     border: 1px solid red;
 }
 
