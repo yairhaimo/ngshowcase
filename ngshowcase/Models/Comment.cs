@@ -9,6 +9,7 @@ namespace ngshowcase.Models
     {
         public int Id { get; set; }
         public string Text { get; set; }
-        // TODO: add users etc
+        public DateTime Date { get; set; }
+        public virtual User User { get; set; }
     }
 }

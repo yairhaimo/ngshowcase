@@ -167,6 +167,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\ItemsController.cs" />
+    <Compile Include="Controllers\ItemTypesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -177,6 +178,14 @@
     <Compile Include="Migrations\201405261859430_Test.cs" />
     <Compile Include="Migrations\201405261859430_Test.Designer.cs">
       <DependentUpon>201405261859430_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405271312413_CommentUser.cs" />
+    <Compile Include="Migrations\201405271312413_CommentUser.Designer.cs">
+      <DependentUpon>201405271312413_CommentUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405271527541_CommentDate.cs" />
+    <Compile Include="Migrations\201405271527541_CommentDate.Designer.cs">
+      <DependentUpon>201405271527541_CommentDate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Comment.cs" />
@@ -212,6 +221,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405261859430_Test.resx">
       <DependentUpon>201405261859430_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405271312413_CommentUser.resx">
+      <DependentUpon>201405271312413_CommentUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405271527541_CommentDate.resx">
+      <DependentUpon>201405271527541_CommentDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

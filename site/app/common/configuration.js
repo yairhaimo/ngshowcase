@@ -7,6 +7,9 @@
         this.baseurl = '';
         this.apiurl = this.baseurl + '/api';
         this.appurl = this.baseurl + '/app';
+        this.plnkrRunUrl = 'http://run.plnkr.co/plunks/';
+        this.plnkrEditUrl = 'http://plnkr.co/edit/';
+        this.plnkrPreviewSuffix = '?p=preview';
     });
 
 }());

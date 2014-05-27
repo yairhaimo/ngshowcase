@@ -1,3 +1,6 @@
 ﻿MASTER
-
+<button ng-click="Auth.login()">Login</button>
+<button ng-click="Auth.logout()">Logout</button><br/>
+IsAuthenticated: {{Auth.isAuthenticated()}}<br/>
+Username: {{Auth.user}}<br/>
 <ui-view></ui-view>

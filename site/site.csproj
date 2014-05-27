@@ -58,8 +58,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\common\auth.js" />
     <Content Include="app\common\configuration.js" />
     <Content Include="app\common\utils.js" />
+    <Content Include="app\data\data.comment.js" />
+    <Content Include="app\data\data.itemtype.js" />
     <Content Include="app\data\data.js" />
     <Content Include="app\pages\add\js\ctrl.add.js" />
     <Content Include="app\pages\add\js\module.add.js" />
@@ -78,6 +81,7 @@
     <Content Include="app\pages\master\js\module.master.js" />
     <Content Include="app\pages\master\js\routing.master.js" />
     <Content Include="app\pages\master\views\master.html" />
+    <Content Include="app\styles\global.css" />
     <Content Include="index.html" />
     <Content Include="Web.config" />
   </ItemGroup>

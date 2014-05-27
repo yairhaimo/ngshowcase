@@ -2,9 +2,21 @@
     'use strict';
     var page = angular.module('ngShowcase.pages.browse');
 
-    page.controller('BrowseController', function ($scope, Item) {
-        Item.query(function (data) {
-            $scope.items = data;
+    page.controller('BrowseController', function ($scope, Item, ItemType) {
+        $scope.data = {};
+
+        ItemType.query(function (data) {
+            $scope.data.itemTypes = data;
         });
+
+        Item.query(function (data) {
+            $scope.data.items = data;
+        });
+
+        $scope.filter = function (itemType) {
+            Item.query({ItemType: itemType.Name}, function (data) {
+                $scope.data.items = data;
+            });
+        };
     });
 }());

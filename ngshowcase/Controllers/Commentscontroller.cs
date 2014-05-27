@@ -16,7 +16,7 @@ namespace ngshowcase.Controllers
         {
             using (var context = new NGShowCaseContext())
             {
-                var comments = context.Items.Include(i => i.Comments).SingleOrDefault(i => i.Id == itemId).Comments;
+                var comments = context.Items.Include(i=>i.Comments).Include(i => i.Comments.Select(c=>c.User)).SingleOrDefault(i => i.Id == itemId).Comments;
                 return comments.ToList();
             }
         }
@@ -26,7 +26,12 @@ namespace ngshowcase.Controllers
         {
             using (var context = new NGShowCaseContext())
             {
-                var comments = context.Items.Include(i=>i.Comments).SingleOrDefault(i => i.Id == itemId).Comments;
+                var comments = context.Items.Include(i=>i.Comments).Include(i=>i.Comments.Select(c=>c.User)).SingleOrDefault(i => i.Id == itemId).Comments;
+                var user = context.Users.SingleOrDefault(u=>u.Id == comment.User.Id);
+                if (user != null)
+                {
+                    comment.User = user;
+                }
                 comments.Add(comment);
                 context.SaveChanges();
             }

@@ -7,6 +7,7 @@
           $stateProvider
               .state('master', {
                   url: '',
+                  abstract: true,
                   templateUrl: 'app/pages/master/views/master.html',
                   controller: 'MasterController'
               });

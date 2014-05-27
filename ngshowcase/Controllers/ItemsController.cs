@@ -17,7 +17,15 @@ namespace ngshowcase.Controllers
         {
             using (var context = new NGShowCaseContext())
             {
-                return context.Items.Include(i => i.Comments).Include(i => i.Tags).Include(i => i.Type).ToList();
+                return context.Items.Include(i => i.Comments.Select(c => c.User)).Include(i => i.Tags).Include(i => i.Type).ToList();
+            }
+        }
+
+        public IEnumerable<Item> Get([FromUri]string itemType)// itemType Name not Id
+        {
+            using (var context = new NGShowCaseContext())
+            {
+                return context.Items.Include(i => i.Comments.Select(c => c.User)).Include(i => i.Tags).Include(i => i.Type).Where(i => i.Type.Name == itemType).ToList();
             }
         }
 
@@ -26,7 +34,7 @@ namespace ngshowcase.Controllers
         {
             using (var context = new NGShowCaseContext())
             {
-                return context.Items.Include(i => i.Comments).Include(i => i.Tags).Include(i => i.Type).SingleOrDefault(i => i.Id == id);
+                return context.Items.Include(i => i.Comments.Select(c => c.User)).Include(i => i.Tags).Include(i => i.Type).SingleOrDefault(i => i.Id == id);
             }
         }
 
