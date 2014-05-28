@@ -14,7 +14,6 @@ namespace ngshowcase.Models
         public DbSet<User> Users { get; set; }
         public DbSet<ItemType> ItemTypes { get; set; }
         public DbSet<Tag> Tags { get; set; }
-        public DbSet<Comment> Comments { get; set; }
 
 
         public NGShowCaseContext()

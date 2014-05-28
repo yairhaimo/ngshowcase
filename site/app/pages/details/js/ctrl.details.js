@@ -2,26 +2,15 @@
     'use strict';
     var page = angular.module('ngShowcase.pages.details');
 
-    page.controller('DetailsController', function ($scope, Item, Comment, $stateParams, $sce, $window, Configuration, SelectedItem) {
-
-        $scope.postComment = function () {
-            $scope.newComment.User = $scope.Auth.user;
-            $scope.newComment.Date = new Date();
-            $scope.newComment.$save({ ItemId: $scope.data.item.Id }, function () {
-                Comment.query({ ItemId: $scope.data.item.Id }, function (data) {
-                    $scope.data.item.Comments = data;
-                });
-            });
-            
-        };
+    page.controller('DetailsController', function ($scope, $window, Configuration, SelectedItem, $location) {
 
         function init() {
-            $scope.newComment = new Comment();
             $scope.data = {
                 item: SelectedItem
             };
             $scope.Configuration = Configuration;
-
+            /// for disqus
+            $scope.url = $location.absUrl();
             
             /// trigger loading for iframe content
             $scope.data.isLoading = true;

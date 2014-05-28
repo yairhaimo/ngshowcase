@@ -14,11 +14,6 @@
 
         /// clear query params and go to browse
         $scope.navigateHome = function () {
-            //$location.search({ 'q': null, 'type': null });
-            //debugger;
-            //var u = $location.url();
-            //var p = $location.path();
-            //var s = $location.search();
             $scope.searchTerm = '';
             $location.url($location.path());
             $state.go('master.browse');

@@ -63,10 +63,15 @@
     <Content Include="app\common\configuration.js" />
     <Content Include="app\common\utils.js" />
     <Content Include="app\data\data.user.js" />
-    <Content Include="app\data\data.comment.js" />
     <Content Include="app\data\data.itemtype.js" />
     <Content Include="app\data\data.js" />
     <Content Include="app\pages\browse\styles\browse.css" />
+    <Content Include="app\pages\details\js\directives.details.js" />
+    <Content Include="app\pages\home\js\ctrl.home.js" />
+    <Content Include="app\pages\home\js\module.home.js" />
+    <Content Include="app\pages\home\js\routing.home.js" />
+    <Content Include="app\pages\home\styles\home.css" />
+    <Content Include="app\pages\home\views\home.html" />
     <Content Include="app\pages\user\js\ctrl.user.js" />
     <Content Include="app\pages\user\js\module.user.js" />
     <Content Include="app\pages\user\js\routing.user.js" />

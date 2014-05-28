@@ -2,6 +2,9 @@
 <html ng-app="ngShowcase">
 <head>
     <title>ngShowcase</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 
@@ -9,6 +12,7 @@
     <link href="app/pages/details/styles/details.css" rel="stylesheet" />
     <link href="app/pages/master/styles/master.css" rel="stylesheet" />
     <link href="app/pages/browse/styles/browse.css" rel="stylesheet" />
+    <link href="app/pages/home/styles/home.css" rel="stylesheet" />
 </head>
 <body>
     <div class="container">
@@ -22,9 +26,6 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
-    <script src="bower_components/moment/moment.js"></script>
-    <script src="bower_components/moment-timezone/moment-timezone.js"></script>
-    <script src="bower_components/angular-moment/angular-moment.js"></script>
     
     <script src="app/app.js"></script>
 
@@ -38,13 +39,16 @@
     <script src="app/data/data.js"></script>
     <script src="app/data/data.item.js"></script>
     <script src="app/data/data.itemtype.js"></script>
-    <script src="app/data/data.comment.js"></script>
     <script src="app/data/data.user.js"></script>
 
     <!-- PAGES -->
     <script src="app/pages/master/js/module.master.js"></script>
     <script src="app/pages/master/js/routing.master.js"></script>
     <script src="app/pages/master/js/ctrl.master.js"></script>
+
+    <script src="app/pages/home/js/module.home.js"></script>
+    <script src="app/pages/home/js/ctrl.home.js"></script>
+    <script src="app/pages/home/js/routing.home.js"></script>
 
     <script src="app/pages/browse/js/module.browse.js"></script>
     <script src="app/pages/browse/js/ctrl.browse.js"></script>
@@ -53,6 +57,7 @@
     <script src="app/pages/details/js/module.details.js"></script>
     <script src="app/pages/details/js/ctrl.details.js"></script>
     <script src="app/pages/details/js/routing.details.js"></script>
+    <script src="app/pages/details/js/directives.details.js"></script>
 
     <script src="app/pages/add/js/module.add.js"></script>
     <script src="app/pages/add/js/ctrl.add.js"></script>

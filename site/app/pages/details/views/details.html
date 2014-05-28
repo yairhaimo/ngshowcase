@@ -40,32 +40,12 @@
         </div>
     </div>
 </div>
-<div class="row" ng-if="Auth.isAuthenticated()">
-    <div class="col-md-3">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Enter a comment" ng-model="newComment.Text" />
-            <div class="input-group-btn">
-                <button type="button" ng-click="postComment()" class="btn btn-default">
-                    Post
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="row">
     <div class="col-md-7">
-        <div ng-repeat="comment in data.item.Comments | orderBy:'-Date' track by comment.Id" class="media">
-            <a class="pull-left" ng-href="{{comment.User.HomePageUrl}}">
-                <img ng-src="{{comment.User.AvatarUrl}}" class="media-object user-avatar user-avatar--sm img-circle" />
-            </a>
-            <div class="media-body">
-                <h5 class="media-heading"><a ng-href="{{comment.User.HomePageUrl}}">{{comment.User.Name}}</a></h5>
-                {{comment.Text}}
-                <div class="comment__date">
-                    {{comment.Date | date:'MMM d, y'}}
-                </div>
-            </div>
-
-        </div>
+        <dir-disqus disqus-shortname="ngshowcase"
+                    disqus-identifier="{{ url }}"
+                    disqus-url="{{ url }}"
+                    disqus_title="{{ data.item.Name }}">
+        </dir-disqus>
     </div>
 </div>

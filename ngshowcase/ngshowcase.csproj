@@ -161,11 +161,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\Database.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\ItemsController.cs" />
     <Compile Include="Controllers\ItemTypesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
@@ -204,8 +202,11 @@
     <Compile Include="Migrations\201405272250372_CommentItem.Designer.cs">
       <DependentUpon>201405272250372_CommentItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201405282043410_RemovedComments.cs" />
+    <Compile Include="Migrations\201405282043410_RemovedComments.Designer.cs">
+      <DependentUpon>201405282043410_RemovedComments.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ItemType.cs" />
     <Compile Include="Models\NGShowCaseContext.cs" />
@@ -257,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405272250372_CommentItem.resx">
       <DependentUpon>201405272250372_CommentItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405282043410_RemovedComments.resx">
+      <DependentUpon>201405282043410_RemovedComments.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

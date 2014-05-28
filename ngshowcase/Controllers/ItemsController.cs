@@ -45,7 +45,7 @@ namespace ngshowcase.Controllers
         {
             using (var context = new NGShowCaseContext())
             {
-                return context.Items.Include(i => i.Comments.Select(c => c.User)).Include(i => i.User).Include(i => i.Tags).Include(i => i.Type).SingleOrDefault(i => i.Id == id);
+                return context.Items.Include(i => i.User).Include(i => i.Tags).Include(i => i.Type).SingleOrDefault(i => i.Id == id);
             }
         }
 

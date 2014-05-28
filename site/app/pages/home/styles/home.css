@@ -1,0 +1,54 @@
+﻿/*.browse__item {
+    opacity: 0;
+}*/
+
+
+.items-panel__header {
+    border-bottom: 2px solid #ddd;
+    padding: 8px;
+    line-height: 1.42857143;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.items-panel--half {
+    height: 350px;
+    max-height: 350px;
+}
+
+
+.browse__item__animation.ng-enter-stagger, .browse__item__animation.ng-leave-stagger,
+.browse__item__animation.ng-move-stagger {
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+    -webkit-transition-duration: 0;
+    transition-duration: 0;
+}
+
+.browse__item__animation {
+    -webkit-transition: 0.35s linear all;
+    transition: 0.35s linear all;
+}
+
+    .browse__item__animation.ng-enter {
+        opacity: 0;
+    }
+
+    .browse__item__animation.ng-leave {
+        opacity: 0;
+    }
+
+    .browse__item__animation.ng-enter-active {
+        opacity: 1;
+    }
+
+
+.table__item--main {
+    width: 80%;
+    padding-left: 25px;
+    font-size: 1.2em;
+}
+
+.table__item--secondary {
+    font-size: 0.9em;
+    color: #808080;
+}
