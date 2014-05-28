@@ -1,16 +1,8 @@
-﻿browse
+﻿
 <div class="row">
-    <div class="col-md-2">
-        <a class="btn btn-default" ui-sref="master.browse">Newest</a>
-    </div>
-    <div class="col-md-2" ng-repeat="itemType in data.itemTypes">
-        <a class="btn btn-default" ui-sref="master.browseType({itemType:itemType.Name})">{{itemType.Name}}</a>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-3" ng-repeat="item in data.items">
+    <div class="col-md-3 browse__item browse__item__animation" ng-repeat="item in data.items">
         <a ui-sref="master.details({id:item.Id})">
-            <div class="thumbnail item--{{item.Type.Name | lowercase}}">
+            <div class="thumbnail   item--{{item.Type.Name | lowercase}}">
                 <img src="http://placehold.it/500x300" alt="">
                 <div class="caption">
                     <h4>{{item.Name}}</h4>

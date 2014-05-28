@@ -2,26 +2,17 @@
     'use strict';
     var page = angular.module('ngShowcase.pages.browse');
 
-    page.controller('BrowseController', function ($scope, Item, ItemType, Items, ItemTypes) {
+    page.controller('BrowseController', function ($scope, Item, ItemType, $location, Browser) {
         $scope.data = {
-            items: Items,
-            itemTypes: ItemTypes
+            items: Browser.items
         };
 
-        //ItemType.query(function (data) {
-        //    $scope.data.itemTypes = data;
-        //});
+        var search = $location.search();
+        Browser.search(search.q, search.type).then(function (res) {
+        });
 
-        
-
-        //Item.query(function (data) {
-        //    $scope.data.items = data;
-        //});
-
-        //$scope.filter = function (itemType) {
-        //    Item.query({ItemType: itemType.Name}, function (data) {
-        //        $scope.data.items = data;
-        //    });
-        //};
+        ItemType.query(function (data) {
+            $scope.data.itemTypes = data;
+        });
     });
 }());

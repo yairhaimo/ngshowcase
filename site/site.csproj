@@ -59,12 +59,14 @@
   <ItemGroup>
     <Content Include="app\app.js" />
     <Content Include="app\common\auth.js" />
+    <Content Include="app\common\browser.js" />
     <Content Include="app\common\configuration.js" />
     <Content Include="app\common\utils.js" />
     <Content Include="app\data\data.user.js" />
     <Content Include="app\data\data.comment.js" />
     <Content Include="app\data\data.itemtype.js" />
     <Content Include="app\data\data.js" />
+    <Content Include="app\pages\browse\styles\browse.css" />
     <Content Include="app\pages\user\js\ctrl.user.js" />
     <Content Include="app\pages\user\js\module.user.js" />
     <Content Include="app\pages\user\js\routing.user.js" />

@@ -12,7 +12,24 @@ namespace ngshowcase.Controllers
     public class ItemsController : ApiController
     {
 
-        // GET api/<controller>
+        public IEnumerable<Item> Get([FromUri]string q = null, [FromUri]string type = null)// itemType Name not Id
+        {
+            using (var context = new NGShowCaseContext())
+            {
+                var items = context.Items.Include(i => i.User).Include(i => i.Tags).Include(i => i.Type);//.Include(i => i.Comments);
+                if (type != null)
+                {
+                    items = items.Where(i => i.Type.Name == type);
+                }
+                if (q != null)
+                {
+                    items = items.Where(i => i.Name.Contains(q));
+                }
+                return items.ToList();
+            }
+        }
+
+        //// GET api/<controller>
         //public IEnumerable<Item> Get()
         //{
         //    using (var context = new NGShowCaseContext())
@@ -21,22 +38,7 @@ namespace ngshowcase.Controllers
         //    }
         //}
 
-        public IEnumerable<Item> Get([FromUri]SearchQuery query)// itemType Name not Id
-        {
-            using (var context = new NGShowCaseContext())
-            {
-                var items = context.Items.Include(i => i.User).Include(i => i.Tags).Include(i => i.Type).Include(i => i.Comments);
-                if (query.ItemType != null)
-                {
-                    items = items.Where(i => i.Type.Name == query.ItemType);
-                }
-                if (query.Name != null)
-                {
-                    items = items.Where(i => i.Name.Contains(query.Name));
-                }
-                return items.ToList();
-            }
-        }
+      
 
         //// GET api/<controller>/5
         public Item Get(int id)

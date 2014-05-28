@@ -1,3 +1,6 @@
 ﻿.navbar__search {
     width: 350px!important;
 }
+.navbar-brand {
+    cursor: pointer;
+}
