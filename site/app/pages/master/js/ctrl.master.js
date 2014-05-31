@@ -3,7 +3,9 @@
     var page = angular.module('ngShowcase.pages.master');
 
     page.controller('MasterController', function ($scope, $location, $state, $stateParams, Browser, ItemType) {
-        $scope.data = {};
+        $scope.data = {
+            filters: Browser.filters
+        };
 
         ItemType.query(function (data) {
             $scope.data.itemTypes = data;

@@ -65,7 +65,8 @@
     <Content Include="app\data\data.user.js" />
     <Content Include="app\data\data.itemtype.js" />
     <Content Include="app\data\data.js" />
-    <Content Include="app\pages\browse\styles\browse.css" />
+    <Content Include="app\pages\browse\js\filters.browse.js" />
+    <None Include="app\pages\browse\styles\browse.less" />
     <Content Include="app\pages\details\js\directives.details.js" />
     <Content Include="app\pages\home\js\ctrl.home.js" />
     <Content Include="app\pages\home\js\module.home.js" />
@@ -83,7 +84,7 @@
     <Content Include="app\pages\details\js\ctrl.details.js" />
     <Content Include="app\pages\details\js\module.details.js" />
     <Content Include="app\pages\details\js\routing.details.js" />
-    <Content Include="app\pages\details\styles\details.css" />
+    <None Include="app\pages\details\styles\details.less" />
     <Content Include="app\pages\details\views\details.html" />
     <Content Include="app\pages\browse\js\ctrl.browse.js" />
     <Content Include="app\pages\browse\js\module.browse.js" />
@@ -92,9 +93,10 @@
     <Content Include="app\pages\master\js\ctrl.master.js" />
     <Content Include="app\pages\master\js\module.master.js" />
     <Content Include="app\pages\master\js\routing.master.js" />
-    <Content Include="app\pages\master\styles\master.css" />
+    <None Include="app\pages\master\styles\master.less" />
     <Content Include="app\pages\master\views\master.html" />
-    <Content Include="app\styles\global.css" />
+    <None Include="app\styles\global.less" />
+    <Content Include="images\ngshowcase-logo.png" />
     <Content Include="index.html" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -103,6 +105,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\data\data.item.js" />
+    <Content Include="app\styles\mixins.less" />
+    <Content Include="app\styles\definitions.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,203 @@
+﻿@import '../../../styles/definitions.less';
+
+
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+
+/* Styles go here */
+
+.grid {
+    padding: 20px 20px 100px 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+    list-style: none;
+    /*text-align: center;*/
+}
+ 
+.grid li {
+    display: inline-block;
+    width: 300px;
+    margin: 20px;
+    padding: 5px;
+    text-align: left;
+    position: relative;
+}
+
+.grid figure {
+    margin: 0;
+    position: relative;
+}
+
+.grid figure img {
+    max-width: 100%;
+    display: block;
+    position: relative;
+}
+
+.grid figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    background: #444444;
+    /*color: #ed4e6e;*/
+}
+
+.grid figcaption h3 {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+ 
+.grid figcaption span:before {
+    content: 'by ';
+}
+ 
+.grid figcaption a {
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 2px;
+    display: inline-block;
+    background: #ed4e6e;
+    color: #fff;
+}
+
+@media screen and (max-width: 31.5em) {
+    .grid {
+        padding: 10px 10px 100px 10px;
+    }
+    .grid li {
+        width: 100%;
+        min-width: 300px;
+    }
+}
+
+
+/******* 3 ****/
+.cs-style-3 figure {
+    overflow: hidden;
+}
+.cs-style-3 figure img {
+    transition: transform 0.4s;
+}
+ 
+.no-touch .cs-style-3 figure:hover img,
+.cs-style-3 figure:hover img {
+    transform: translateY(-50px);
+}
+.cs-style-3 figcaption {
+    height: 100px;
+    width: 100%;
+    top: auto;
+    bottom: 0;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.4s, opacity 0.1s 0.3s;
+    backface-visibility: hidden;
+}
+.no-touch .cs-style-3 figure:hover figcaption,
+.cs-style-3 figure:hover figcaption {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: transform 0.4s, opacity 0.1s;
+}
+.cs-style-3 figcaption a {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.browse__item {
+    
+}
+
+.item {
+    background-color: #444444;
+    border: 0;
+    border-radius: 0;
+    
+}
+
+.item__preview {
+    background-color: #dddddd;
+}
+
+.item__details {
+    color: #dddddd;
+    padding: 7px;
+    height: 110px;
+    overflow: hidden;
+}
+
+.browse__item.ng-enter {
+    -webkit-transition: 0.35s linear all;
+    transition: 0.35s linear all;
+    position:relative;
+}
+.browse__item.ng-leave {
+    -webkit-transition: 0s linear all;
+    transition: 0s linear all;
+    position:relative;
+}
+
+.browse__item.ng-enter-stagger,
+/*.browse__item.ng-leave-stagger,*/
+.browse__item.ng-move-stagger {
+  /* 200ms will be applied between each sucessive enter operation */ 
+  -webkit-transition-delay:0.05s;
+  transition-delay:0.05s;
+  -webkit-transition-duration:0;
+  transition-duration:0;
+}
+
+    .browse__item.ng-enter {
+        opacity: 0;
+    }
+
+    .browse__item.ng-leave {
+        opacity: 1;
+    }
+    .browse__item.ng-leave-active {
+        opacity: 0;
+    }
+
+    .browse__item.ng-enter-active {
+        opacity: 1;
+    }
+
+
+    
+/*.browse__item.ng-enter-stagger, .browse__item.ng-leave-stagger,
+.browse__item.ng-move-stagger {
+    -webkit-transition-delay: 0.05s;
+    transition-delay: 0.05s;
+    -webkit-transition-duration: 0;
+    transition-duration: 0;
+}*/
+
+.item--control {
+    border-left: 8px solid @control-color!important;
+}
+
+.item--behavior {
+    border-left: 8px solid @behavior-color!important;
+}
+
+.item--module {
+    border-left: 8px solid @module-color!important;
+}

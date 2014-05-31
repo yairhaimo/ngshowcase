@@ -1,0 +1,67 @@
+﻿@import 'mixins.less';
+@import '../pages/master/styles/master.less';
+@import '../pages/details/styles/details.less';
+@import '../pages/browse/styles/browse.less';
+
+
+/* UI Bootstrap */
+.nav, .pagination, .carousel, .panel-title a {
+    cursor: pointer;
+}
+/****************/
+*
+{
+    margin: 0;
+    padding: 0;
+}
+html,body
+{
+    height:100%;
+    margin: 0;
+    padding: 0;
+}
+
+.clear--margins {
+    margin: 0;
+
+}
+
+a {
+    color: #dddddd;
+    &:hover {
+        color: #fef4f2;
+        text-decoration: none;
+    }
+}
+
+/**** SCROLLBAR STYLING ****/
+::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+}
+
+::-webkit-scrollbar-button:start:decrement, #doc ::-webkit-scrollbar-button:end:increment {
+    display: block;
+    height: 0;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: #444444;
+    -webkit-border-radius: 0;
+    -webkit-border-bottom-right-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    height: 50px;
+    background-color: #5a5959;
+    /*-webkit-border-radius: 4px;*/
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    width: 50px;
+    background-color: #5a5959;
+    /*-webkit-border-radius: 4px;*/
+}
+

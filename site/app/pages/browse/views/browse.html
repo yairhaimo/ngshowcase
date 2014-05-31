@@ -1,13 +1,37 @@
-﻿
-<div class="row">
-    <div class="col-md-3 browse__item browse__item__animation" ng-repeat="item in data.items">
+﻿<!--<div class="row">
+    <div class="col-md-3 col-sm-6 browse__item" ng-repeat="item in data.items | typefilter:data.filters | limitTo:'12' track by item.Id">
         <a ui-sref="master.details({id:item.Id})">
-            <div class="thumbnail   item--{{item.Type.Name | lowercase}}">
-                <img src="http://placehold.it/500x300" alt="">
-                <div class="caption">
+            <div class="thumbnail item item--{{item.Type.Name | lowercase}}">
+                <img ng-src="data:image/png;base64,{{item.Image}}" ng-if="item.Image" />
+                <img src="http://placehold.it/650x390" alt="" ng-if="!item.Image">
+                <div class="row item__overlay-menu" ng-show="item.showOverlayMenu">
+                    <div class="menu-item">A</div>
+                    <div class="menu-item">B</div>
+                    <div class="menu-item">C</div>
+                </div>
+                <div class="item__details">
                     <h4>{{item.Name}}</h4>
+                    <small>{{item.Description}}</small>
                 </div>
             </div>
         </a>
     </div>
+</div>-->
+<div class="row">
+    <div class="col-md-2"><a href="" ng-click="previousPage()"><h2>Previous</h2></a></div>
+    <div class="col-md-offset-8 col-md-2"><a href="" ng-click="nextPage()"><h2>Next</h2></a></div>
 </div>
+<ul class="grid cs-style-3">
+    <li class="browse__item thumbnail item item--{{item.Type.Name | lowercase}}" ng-repeat="item in data.items | typefilter:data.filters  track by item.Id">
+        <a ui-sref="master.details({id:item.Id})">
+            <figure>
+                <img ng-src="data:image/png;base64,{{item.Image}}" ng-if="item.Image" />
+                <img src="http://placehold.it/650x390" alt="" ng-if="!item.Image">
+                <figcaption>
+                    <h4>{{item.Name}}</h4>
+                    <small>{{item.Description}}</small>
+                </figcaption>
+            </figure>
+        </a>
+    </li>
+</ul>

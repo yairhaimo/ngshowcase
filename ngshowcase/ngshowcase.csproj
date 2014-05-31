@@ -166,6 +166,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ItemsController.cs" />
     <Compile Include="Controllers\ItemTypesController.cs" />
+    <Compile Include="Controllers\SeederController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -205,6 +206,38 @@
     <Compile Include="Migrations\201405282043410_RemovedComments.cs" />
     <Compile Include="Migrations\201405282043410_RemovedComments.Designer.cs">
       <DependentUpon>201405282043410_RemovedComments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405311559393_Item_GitHub_HomePage.cs" />
+    <Compile Include="Migrations\201405311559393_Item_GitHub_HomePage.Designer.cs">
+      <DependentUpon>201405311559393_Item_GitHub_HomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405311602187_Item_Image.cs" />
+    <Compile Include="Migrations\201405311602187_Item_Image.Designer.cs">
+      <DependentUpon>201405311602187_Item_Image.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405311632210_Item_HomePage-Rename.cs" />
+    <Compile Include="Migrations\201405311632210_Item_HomePage-Rename.Designer.cs">
+      <DependentUpon>201405311632210_Item_HomePage-Rename.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405311655282_Item_User.cs" />
+    <Compile Include="Migrations\201405311655282_Item_User.Designer.cs">
+      <DependentUpon>201405311655282_Item_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405311657165_Item_UserName.cs" />
+    <Compile Include="Migrations\201405311657165_Item_UserName.Designer.cs">
+      <DependentUpon>201405311657165_Item_UserName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405311659108_User_Items.cs" />
+    <Compile Include="Migrations\201405311659108_User_Items.Designer.cs">
+      <DependentUpon>201405311659108_User_Items.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405311703289_Item_PlnkrToDemo.cs" />
+    <Compile Include="Migrations\201405311703289_Item_PlnkrToDemo.Designer.cs">
+      <DependentUpon>201405311703289_Item_PlnkrToDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405311704121_Item_PlnkrUrl.cs" />
+    <Compile Include="Migrations\201405311704121_Item_PlnkrUrl.Designer.cs">
+      <DependentUpon>201405311704121_Item_PlnkrUrl.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Item.cs" />
@@ -261,6 +294,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405282043410_RemovedComments.resx">
       <DependentUpon>201405282043410_RemovedComments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405311559393_Item_GitHub_HomePage.resx">
+      <DependentUpon>201405311559393_Item_GitHub_HomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405311602187_Item_Image.resx">
+      <DependentUpon>201405311602187_Item_Image.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405311632210_Item_HomePage-Rename.resx">
+      <DependentUpon>201405311632210_Item_HomePage-Rename.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405311655282_Item_User.resx">
+      <DependentUpon>201405311655282_Item_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405311657165_Item_UserName.resx">
+      <DependentUpon>201405311657165_Item_UserName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405311659108_User_Items.resx">
+      <DependentUpon>201405311659108_User_Items.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405311703289_Item_PlnkrToDemo.resx">
+      <DependentUpon>201405311703289_Item_PlnkrToDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405311704121_Item_PlnkrUrl.resx">
+      <DependentUpon>201405311704121_Item_PlnkrUrl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

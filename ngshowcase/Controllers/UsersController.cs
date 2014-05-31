@@ -16,7 +16,8 @@ namespace ngshowcase.Controllers
         {
             using (var context = new NGShowCaseContext())
             {
-                return context.Users.Include(u => u.Items.Select(i => i.Tags)).Include(u => u.Items.Select(i => i.Type)).ToList();
+                //return context.Users.Include(u => u.Items.Select(i => i.Tags)).Include(u => u.Items.Select(i => i.Type)).ToList();
+                return context.Users.ToList();
             }
         }
 
@@ -25,7 +26,8 @@ namespace ngshowcase.Controllers
         {
             using (var context = new NGShowCaseContext())
             {
-                return context.Users.Include(u => u.Items.Select(i => i.Tags)).Include(u => u.Items.Select(i => i.Type)).SingleOrDefault(u => u.Name == id);
+                //return context.Users.Include(u => u.Items.Select(i => i.Tags)).Include(u => u.Items.Select(i => i.Type)).SingleOrDefault(u => u.Name == id);
+                return context.Users.SingleOrDefault(u => u.Name == id);
             }
         }
 

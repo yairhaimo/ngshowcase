@@ -4,7 +4,7 @@
 
     app.config(['$urlRouterProvider', '$locationProvider',
         function ( $urlRouterProvider, $locationProvider) {
-            $urlRouterProvider.otherwise('/');
+            $urlRouterProvider.otherwise('/browse');
             $locationProvider.hashPrefix('!');
         }
     ]);

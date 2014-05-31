@@ -12,7 +12,19 @@
                   resolve: {
                       SelectedItem: function ($stateParams, Item, Configuration, $sce) {
                           return Item.get({ Id: $stateParams.id }, function (data) {
-                              data.PlnkrUrl = $sce.trustAsResourceUrl(Configuration.plnkrRunUrl + data.PlnkrId);
+                              if (data.DemoUrl) {
+                                  data.PreviewUrl = $sce.trustAsResourceUrl(data.DemoUrl);
+                              }
+                              else if (data.PlnkrUrl) {
+                                  data.PreviewUrl = $sce.trustAsResourceUrl(data.PlnkrUrl);
+                              }
+                              else if ((data.HomePageUrl) && (data.HomePageUrl !== data.GitHubUrl)) {
+                                  data.PreviewUrl = $sce.trustAsResourceUrl(data.HomePageUrl);
+                              }
+                              else if (data.GitHubUrl) {
+                                  data.PreviewUrl = $sce.trustAsResourceUrl(data.GitHubUrl + '/blob/master/README.md');
+                              }
+
                               return data;
                           });
                       }

@@ -1,6 +1,5 @@
-﻿<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+﻿<!--<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container-fluid container">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -11,7 +10,6 @@
             <span class="navbar-brand" ng-click="navigateHome()">ngShowcase</span>
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav">
                 <li ng-repeat="itemType in data.itemTypes" ng-click="filterByType(itemType.Name)"><a href="">{{itemType.Name}}</a></li>
@@ -38,8 +36,57 @@
                     </ul>
                 </li>
             </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-</nav>
+        </div>
+    </div>
+</nav>-->
 
-<ui-view></ui-view>
+
+<div class="master">
+    <div class="row master__filler clear--margins">
+        <div class="master__wrapper">
+            <div class="col-md-2 hidden-xs side__menu">
+                <!--<ul>
+                    <li><a href="#!/browse?type=control">Controls</a></li>
+                    <li><a href="#!/browse?type=behavior">Behaviors</a></li>
+                    <li><a href="#!/browse?type=module">Modules</a></li>
+                </ul>-->
+                <div class="row logo__container">
+                    <div class="col-md-6 col-md-offset-3">
+                        <a ui-sref="master.browse"><div class="logo"></div></a>
+                    </div>
+                </div>
+
+                <div class="menu__container">
+                    <div ng-hide="Auth.isAuthenticated()"><a href="" ng-click="Auth.login()"><i class="fa fa-github fa-lg"></i> Sign In</a></div>
+                    <div class="dropdown" ng-show="Auth.isAuthenticated()" ng-click="Auth.logout()">
+                        <a href="">Sign Out</a>
+                    </div>
+                </div>
+                <div class="menu__container filters__container" ng-if="$state.is('master.browse')">
+                    <div class="row">
+                        <div class="col-md-11 col-md-offset-1">
+                            <label><input type="checkbox" ng-model="data.filters.control" />Controls</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-11 col-md-offset-1">
+                            <label><input type="checkbox" ng-model="data.filters.behavior" />Behaviors</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-11 col-md-offset-1">
+                            <label><input type="checkbox" ng-model="data.filters.module" />Modules</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu__container" ng-if="!$state.is('master.browse')">
+                    <a ui-sref="master.browse"><h1><i class="fa fa-arrow-left"></i> Browse</h1></a>
+                </div>
+            </div>
+            <div class="col-md-9 col-md-offset-1 content">
+                <ui-view></ui-view>
+            </div>
+        </div>
+    </div>
+</div>

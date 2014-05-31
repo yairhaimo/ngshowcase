@@ -23,6 +23,7 @@
     "moment-timezone": "~0.0.6",
     "angular-bootstrap": "~0.11.0",
     "font-awesome": "~4.1.0",
-    "angular-animate": "~1.2.16"
+    "angular-animate": "~1.2.16",
+    "less.js": "~1.7.0"
   }
 }

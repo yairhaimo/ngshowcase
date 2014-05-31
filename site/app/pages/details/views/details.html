@@ -1,47 +1,98 @@
-﻿<div class="media details__title">
-    <a class="pull-left" ui-sref="master.user({name:data.item.User.Name})">
-        <img ng-src="{{data.item.User.AvatarUrl}}" class="media-object user-avatar user-avatar--lg img-circle" />
-    </a>
-    <div class="media-body">
-        <h3 class="media-heading">{{data.item.Name}}</h3>
-        <a ui-sref="master.user({name:data.item.User.Name})">{{data.item.User.Name}}</a>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-7 preview-window panel panel-default item--{{data.item.Type.Name | lowercase}}">
-        <span ng-show="data.isLoading">Loading, please wait.</span>
-        <iframe sandbox="allow-same-origin allow-scripts" ng-src="{{data.item.PlnkrUrl}}" frameborder="0" onload="finishedLoadingPlunker()" ng-hide="data.isLoading"></iframe>
-    </div>
-    <div class="col-md-4 col-md-offset-1">
-        <div class="row">
-            <div class="col-md-4">
-                Type
-            </div>
-            <div class="col-md-8">
-                {{data.item.Type.Name}}
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-4">
-                Github
-            </div>
-            <div class="col-md-8">
-                <a class="pull-left" ng-href="{{data.item.User.HomePageUrl}}">{{data.item.User.Name}}</a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                Plunker
-            </div>
-            <div class="col-md-8">
-                <a ng-href="{{Configuration.plnkrEditUrl}}{{data.item.PlnkrId}}{{Configuration.plnkrPreviewSuffix}}">I said plunker!</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row">
+﻿<!--<div class="row details__title">
     <div class="col-md-7">
+        <div class="row">
+            <div class="col-md-10">
+                <h3 class="media-heading">{{data.item.Name}}</h3>
+                <div>{{data.item.Description}}</div>
+            </div>
+            <div class="col-md-2">
+                <a class="pull-right" ui-sref="master.user({name:data.item.UserName})">
+                    <img ng-src="{{data.item.User.AvatarUrl}}" class="media-object user-avatar user-avatar--lg" ng-if="data.item.User.AvatarUrl"/>
+                    {{data.item.UserName}}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>-->
+<div class="row">
+    <div class="col-lg-7">
+        <a class="pull-right" ui-sref="master.user({name:data.item.UserName})">
+            <!--<img ng-src="{{data.item.User.AvatarUrl}}" class="media-object user-avatar user-avatar--lg" ng-if="data.item.User.AvatarUrl" />-->
+            <h3>{{data.item.UserName}}</h3>
+        </a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-7 col-md-12 preview-window panel panel-default item details-item--{{data.item.Type.Name | lowercase}}">
+        <div class="row">
+            <div class="col-md-8">
+                <h3 class="media-heading">
+                    {{data.item.Name}}
+                </h3>
+                <div>{{data.item.Description}}</div>
+            </div>
+            <div class="col-md-4">
+                <div class="pull-right">
+                    <span class="item__menu__item" ng-if="data.item.HomePageUrl && data.item.HomePageUrl != data.item.GitHubUrl">
+                        <a ng-href="{{data.item.HomePageUrl}}" target="_blank">
+                            <span class="fa-stack fa-2x">
+                                <i class="fa fa-square-o fa-stack-2x"></i>
+                                <i class="fa fa-globe fa-stack-1x"></i>
+                            </span>
+                        </a>
+                    </span>
+                    <span class="item__menu__item" ng-if="data.item.GitHubUrl">
+                        <a ng-href=" {{data.item.GitHubUrl}}" target="_blank">
+                            <span class="fa-stack fa-2x">
+                                <i class="fa fa-square-o fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x"></i>
+                            </span>
+                        </a>
+                    </span>
+                    <span class="item__menu__item" ng-if="data.item.PlnkrUrl">
+                        <a ng-href="{{data.item.PlnkrUrl}}" target="_blank" title="Open in Plunker">
+                            <span class="fa-stack fa-2x">
+                                <i class="fa fa-square-o fa-stack-2x"></i>
+                                <i class="fa fa-arrow-down fa-stack-1x"></i>
+                            </span>
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!--<div class="item__menu">
+            <span class="item__menu__item" ng-if="data.item.HomePageUrl && data.item.HomePageUrl != data.item.GitHubUrl">
+                <a ng-href="{{data.item.HomePageUrl}}" target="_blank">
+                    <span class="fa-stack fa-2x">
+                        <i class="fa fa-square-o fa-stack-2x"></i>
+                        <i class="fa fa-globe fa-stack-1x"></i>
+                    </span>
+                </a>
+            </span>
+            <span class="item__menu__item" ng-if="data.item.GitHubUrl">
+                <a ng-href=" {{data.item.GitHubUrl}}" target="_blank">
+                    <span class="fa-stack fa-2x">
+                        <i class="fa fa-square-o fa-stack-2x"></i>
+                        <i class="fa fa-github fa-stack-1x"></i>
+                    </span>
+                </a>
+            </span>
+            <span class="item__menu__item" ng-if="data.item.PlnkrUrl">
+                <a ng-href="{{data.item.PlnkrUrl}}" target="_blank" title="Open in Plunker">
+                    <span class="fa-stack fa-2x">
+                        <i class="fa fa-square-o fa-stack-2x"></i>
+                        <i class="fa fa-arrow-down fa-stack-1x"></i>
+                    </span>
+                </a>
+            </span>
+        </div>-->
+
+        <span ng-show="data.isLoading">Loading, please wait.</span>
+        <span ng-hide="data.isLoading" class="item__preview__panel">
+            <iframe class="item__preview" sandbox="allow-same-origin allow-scripts" ng-src="{{data.item.PreviewUrl}}" frameborder="0" onload="finishedLoadingPlunker()" ng-hide="data.isLoading"></iframe>
+        </span>
+    </div>
+    <div class="col-lg-3 col-lg-offset-1 col-md-12">
         <dir-disqus disqus-shortname="ngshowcase"
                     disqus-identifier="{{ url }}"
                     disqus-url="{{ url }}"
@@ -49,3 +100,4 @@
         </dir-disqus>
     </div>
 </div>
+
